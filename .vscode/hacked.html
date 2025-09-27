@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="center-container">
+        <h1>You've Been Hacked!</h1>
+    </div>
+
+    <div class="why">
+        <a href="why.html"><button>Learn <b>Why</b></button></a>
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+
+        h1{
+            color: red;
+            font-size: 50px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            width: fit-content;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 9s steps(70, end) infinite, blink 0.75s step-end infinite;
+        }
+
+        .center-container {
+            display: flex;
+            margin-top: 10%;
+            height: 200px;
+            width: 600px;
+            position: fixed;
+            left: 28%;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 2px solid red;
+        }
+
+        /* Animations */
+        @keyframes typing {
+            0% { width: 0; }
+            50% { width: 100% }
+            100% { width: 0 }
+        }
+
+        .why button{
+            color: black;
+            font-size: 18px;
+            background-color: red;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 100px;
+            padding-right: 100px;
+            border-radius: 12px;
+            border: none;
+            position: fixed;
+            bottom: 5;
+            top: 65%;
+            left: 40%;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
+
+        .why button:hover{
+            transform: scale(1.2);
+        }
+
+    </style>
+
+    <script>
+
+    </script>
+</body>
+</html>

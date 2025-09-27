@@ -1,0 +1,372 @@
+body {
+  background-image: url(../IMG/P1\ \(6\).jpeg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.15); /* translucent white background */
+  border-radius: 30px;
+  box-shadow: 1px 1px 10px 2px gold;
+  backdrop-filter: blur(20px); /* the glass effect */
+  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 350px;
+  height: 500px;
+  padding: 30px;
+  color: rgb(0, 0, 0); /* ensure text is readable */
+  margin-top: -35px;
+
+}
+
+.logo{
+  border-radius: 10px;
+  height: 100px;
+  width: 120px;
+  margin-left: 118px;
+  margin-bottom: 40px;
+  margin-top: -20px;   
+}
+
+.ελκυστικός{
+  margin-top: -55px;
+  text-align: center;
+}
+
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  font-weight: bolder;
+  width: 336px;
+  padding: 8px;
+  border: 2px solid;
+  border-radius: 10px;
+  background: transparent;
+  outline: none;
+  color: rgba(0, 0, 0, 5);
+}
+
+/*Password show/hide*/
+.password-group {
+  position: relative;
+}
+
+.password-group input[type="password"],
+.password-group input[type="text"] {
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.password-group img {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#eyeconpass{
+margin-top: 13px;
+}
+
+.signup-pass img {
+  position: absolute;
+  top: 45%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/*CONFIRM PASSWORD*/
+#confirm-password::placeholder{
+  color: rgba(0, 0, 0, 0.637);
+  text-shadow: 1px 2px 5px green;
+  font-style: italic;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+  margin-top: -15px;  
+}
+
+.tab button {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  border:2px solid black;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+  
+.tab button.active {
+  background: transparent;
+  color: gold;
+  border: 2px solid gold;
+}
+
+
+.form-group {
+  margin-bottom: 25px;
+}
+  
+#loginType{
+  color: black;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.form-actions a {
+  font-size: 0.9em;
+  text-decoration: none;
+  color: gainsboro;
+  margin-bottom: -80px;
+}
+  
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to bottom, gold, rgb(255, 153, 0));
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 60px;
+  transition: 0.4s ease
+}
+
+button[type="submit"]:hover{
+  background: linear-gradient(to top, gold, rgb(255, 153, 0));
+  transform: scale(1.1);
+  transition: 0.4s ease;
+}
+
+button[type="submit"]:active{
+  transform: scale(1.2);
+}
+  
+.form {
+  display: none;
+}
+  
+.form.active {
+  display: block;
+}
+
+#signup{
+  margin-top: -20px;
+}
+
+#passwordHelp{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: rgb(21, 221, 14);
+  padding: 100px;
+  margin-right: 15px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 2px 5px 70px 30px rgba(255, 255, 255, 0.342);
+  font-size: 20px;
+  font-style: italic;
+  border: 2px solid gainsboro;
+  
+}
+
+#proceedLoginBtn{
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background:linear-gradient( to bottom, rgb(255, 140, 0), gold);
+  color:black;
+  box-shadow: 2px 5px 25px rgba(255, 217, 0, 0.062);
+  width: 180px;
+  height: 50px;
+  border-radius: 20px;
+  border-color: gold;
+  transition: 0.4s ease;
+}
+
+#proceedLoginBtn:hover{
+  transform:scale(1.1)
+}
+
+
+.error{
+  color: red;
+  font-weight:500;
+  font-style:normal;
+  text-shadow: 1px 1px 2px black;
+}
+
+#password-error{
+  color: red;
+  font-weight:500;
+  font-style:normal;
+  text-shadow: 1px 1px 2px black;
+}
+
+#loginEmail::placeholder{
+  color: rgba(0, 0, 0, 0.637);
+  text-shadow: 1px 2px 5px green;
+  font-style: italic;
+}
+
+#loginPassword::placeholder{
+  color: rgba(0, 0, 0, 0.637);
+  text-shadow: 1px 2px 5px green;
+  font-style: italic;
+}
+
+#signupName::placeholder{
+  color: rgba(0, 0, 0, 0.637);
+  text-shadow: 1px 2px 5px green;
+  font-style: italic;
+}
+
+#signupEmail::placeholder{
+  color: rgba(0, 0, 0, 0.637);
+  text-shadow: 1px 2px 5px green;
+  font-style: italic;
+}
+
+#signupPassword::placeholder{
+  color: rgba(0, 0, 0, 0.637);
+  text-shadow: 1px 2px 5px green;
+  font-style: italic;
+}
+
+#signupPassword{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.option{
+  background-color: rgb(56, 56, 56);
+}
+
+#faqs-btn{
+  position: fixed;
+  bottom: 55px;
+  right: 50px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: linear-gradient(to bottom, gold, rgb(255, 153, 0));
+  border-radius: 50px;
+  padding: 8px 20px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  transition: 0.4s ease;
+}
+
+#faqs-btn:hover{
+  transform: scale(1.2);
+}
+
+/*LOGIN ERROR*/
+#loginError {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+
+footer {
+  background-color: transparent;
+  color: black ;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+}
+
+.cont{
+  background: linear-gradient(to bottom, gold, rgb(255, 153, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: center;
+  width: 100%;
+  height: 10px;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  margin-top: -20px;
+
+}

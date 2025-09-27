@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&A Peanuts</title>
+    <link rel="stylesheet" href="../CSS/cart.css">
+    
+    
+</head>
+
+    <body>
+        <img src="../IMG/P1 (6).jpeg" alt="Background Image" class="bg-img">
+        <!-- Header Section -->
+        <header id="HEADER">
+            <a href="../PAGES/home.html">
+                <h1>
+                    <img src="../IMG/1e2b3aea-d004-4674-9f39-a064586ce66b-removebg-preview (6).png" alt="logo" class="logo">
+                </h1>
+            </a>
+            <p id="greek-word">ελκυστικός</p>
+        </header>
+
+        <main>
+    
+        <!-- Navigation Bar -->
+            <nav>
+                <ul>
+                       <!--LOGO-->
+
+                    <li>
+                      <a href="../PAGES/home.html" class="navbar-logo-link">
+                        <img src="../IMG/1e2b3aea-d004-4674-9f39-a064586ce66b-removebg-preview (6).png" alt="logo" class="navbar-logo">
+                      </a>
+                    </li>
+                    <!--Home Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/home.html" class="home-btn"><img src="../IMG/home-solid-24 (4).png" alt="Home"></a> 
+                            <span class="slide-label">Home</span>             
+                        </div>
+                    </li>
+                
+
+                    <!--Product Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/product.html" class="prod-btn"><img src="../IMG/food-menu-solid-24.png" alt="Product"></a>
+                            <span class="slide-label" id="prod-btn">Product</span>
+                        </div>
+                    </li>
+
+
+                    <!--Cart Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/cart.html" class="cart-btn"><img src="../IMG/cart-solid-24 (1).png" alt="Cart"></a>
+                            <span class="slide-label" id="cart-btn">Cart</span>
+                        </div>
+                    </li>
+
+                    <!--FAQ's Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/faqs.html" class="faqs-btn"><img src="../IMG/message-rounded-dots-solid-24.png" alt="Cart"></a>
+                            <span class="slide-label">FAQs</span>
+                        </div>
+                    </li>
+
+                    <!--About Us Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/aboutus.html" class="about-btn"><img src="../IMG/info-circle-solid-24.png" alt="About Us"></a>
+                            <span class="slide-label">About Us</span>
+                        </div>
+                    </li>
+
+                    <!--Profile Button-->
+                    <li class="profile-menu">
+                        <div class="icon-wrapper" onclick="toggleProfileDropdown()">
+                        <div class="prof-btn"><img src="../IMG/user-solid-24.png" alt="Profile"></div>
+                        <span class="slide-label">Profile</span>
+                        </div>
+                    
+                        <!-- Dropdown content -->
+                        <div class="dropdown-content" id="profileDropdown">
+                            <p><strong>Logged in as:</strong></p>
+                            <p><strong>Username:</strong></p>
+                            <p><strong>Email:</strong></p>
+                            <a href="../PAGES/login.html">Logout</a>
+                        </div>
+                    </li>
+               
+                    
+
+                </ul>
+
+            </nav>
+
+
+  <div class="cart-order-container">
+  <div class="switch-buttons">
+    <button id="cartTab" class="tab-btn active">Cart</button>
+    <button id="ordersTab" class="tab-btn">Orders</button>
+  </div>
+
+  <div id="cartSection" class="tab-content">
+    <!-- Cart Items -->
+
+
+<div class="order-header">
+  <span class="order-icon">🛒</span>
+  <h2>Your Cart</h2>
+</div><br><br>
+
+<!-- Somewhere inside your cart section -->
+<div id="cartItemsContainer">
+  <!-- Cart items will be inserted here by JS -->
+</div>
+
+
+
+    <div id="cart-items"></div>
+  </div>
+
+  <div id="ordersSection" class="tab-content hidden">
+   
+    <!-- Your Orders Here -->
+   <div class="order-header">
+  <span class="order-icon">🧾</span>
+  <h2>Your Orders</h2>
+</div><br>
+
+    <div class="status-tab">
+         <span onclick="filterOrders('all')" class="order-status active">All</span>
+         <span onclick="filterOrders('pending')" class="order-status">Pending</span>
+         <span onclick="filterOrders('to_ship')" class="order-status">To Ship</span>
+         <span onclick="filterOrders('shipped')" class="order-status">Shipped</span>
+         <span onclick="filterOrders('to_receive')" class="order-status">To Receive</span>
+         <span onclick="filterOrders('delivered')" class="order-status">Delivered</span>
+         <span onclick="filterOrders('cancelled')" class="order-status">Cancelled</span>
+     
+    </div><br><br>
+    
+    <div id="order-items">Loading orders...</div>
+  </div>
+</div>
+
+
+
+<!-- BEGIN: Product Modal (copy from product.html) -->
+<div id="productModal" class="modal" style="display: none;">
+  <div class="modal-content" id="modalBox">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+    <div id="modalLayout" class="modal-layout">
+      
+      <!-- Left Side: Product Info -->
+      <div class="left-section">
+        <img id="modalImage" src="" alt="Product Image">
+        <h3 id="modalName"></h3>
+        <p id="modal-price">Price: ₱<span id="modalPrice"></span></p><br>
+
+        <label for="modalQuantity" class="quantity">Quantity:</label>
+        <input type="number" id="modalQuantity" min="1" value="1" oninput="updateTotal()">
+
+        <p>Product Total: ₱<span id="productTotal">0.00</span></p>
+        <p id="ship-fee">
+          Shipping Fee: ₱<span id="shippingFee">36.00</span><br> 
+          <span id="free-ship" style="color: rgb(0, 119, 128); font-size: 15px;"></span>
+        </p><br>
+        <p id="total">Total Payment: ₱<span id="totalPayment">0</span></p>
+
+      </div>
+
+      <!-- Right Side: Shipping & Checkout (only for Buy) -->
+      <div class="right-section" id="buyFields" style="display: none;">
+        
+        
+       <label class="ship_add">Region:<br>
+  <select id="region" onchange="loadProvinces()">
+    <option value="">-- Select Region --</option>
+  </select>
+</label><br>
+
+<label class="ship_add">Province:<br>
+  <select id="province" onchange="loadCities()" disabled>
+    <option value="">-- Select Province --</option>
+  </select>
+</label><br>
+
+<label class="ship_add">City / Municipality:<br>
+  <select id="city" onchange="loadBarangays()" disabled>
+    <option value="">-- Select City / Municipality --</option>
+  </select>
+</label><br>
+
+<label class="ship_add">Barangay:<br>
+  <select id="barangay" disabled>
+    <option value="">-- Select Barangay --</option>
+  </select>
+</label><br>
+
+<!-- Keep your existing input intact -->
+<label class="ship_add">Shipping Address:<br>
+  <input type="text" id="address" placeholder="Street / House No.">
+</label><br>
+
+
+        <label class="contact_no">Contact Number:<br>
+          <input type="tel" id="contact" pattern="[0-9]{11}" maxlength="11" placeholder="Ex: 09123456789">
+        </label><br>
+
+        <label id="pay_mode">Payment Method:<br>
+          <select id="paymentMethod">
+            <option value="COD" class="pay_mode">Cash on Delivery</option>
+            <option value="GCash" class="pay_mode">GCash</option>
+          </select>
+        </label><br>
+
+        <!-- Hidden cart ID (if opened from cart) -->
+        <input type="hidden" id="modalCartId" value="">
+
+        <!-- ✅ Checkout button moved here -->
+        <button id="actionButton" onclick="submitForm()">CHECK OUT</button>
+      </div>
+    </div>
+
+    <!-- ✅ Cart button (only shown in cart mode) -->
+    <div id="cartButtonContainer" style="display: none; text-align:right;">
+      <button id="actionButtonCart" onclick="submitForm()">ADD TO CART</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Overlay -->
+<div id="confirmation-overlay" style="display: none;">
+  <div id="confirmation"></div>
+</div>
+<!-- END: Product Modal -->
+
+
+
+            <script src="../JS/profile.js"></script>
+            <script src="../JS/product.js"></script>
+            <script src="../JS/cart.js"></script>
+        
+        </main>
+
+
+            <div class="cont">
+                <footer>
+                <h5>&copy; 2025 a&a Peanuts. All rights reserved.</h5>
+                </footer>
+            </div>
+    </body>
+
+</html>

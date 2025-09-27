@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&A Peanuts</title>
+    <link rel="stylesheet" href="../CSS/faqs.css">
+</head>
+
+    <body>
+        <img src="../IMG/P1 (6).jpeg" alt="Background Image" class="bg-img">
+        <!-- Header Section -->
+        <header id="HEADER">
+            <a href="../PAGES/home.html"><h1><img src="../IMG/1e2b3aea-d004-4674-9f39-a064586ce66b-removebg-preview (6).png" alt="logo" class="logo"></h1></a>
+            <p id="greek-word">ελκυστικός</p>
+        </header>
+
+        <main>
+    
+        <!-- Navigation Bar -->
+            <nav>
+                <ul>
+                     <!--LOGO-->
+
+                    <li>
+                      <a href="../PAGES/home.html" class="navbar-logo-link">
+                        <img src="../IMG/1e2b3aea-d004-4674-9f39-a064586ce66b-removebg-preview (6).png" alt="logo" class="navbar-logo">
+                      </a>
+                    </li>
+
+                    <!--Home Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/home.html" class="home-btn"><img src="../IMG/home-solid-24 (4).png" alt="Home"></a> 
+                            <span class="slide-label">Home</span>             
+                        </div>
+                    </li>
+                
+
+                    <!--Product Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/product.html" class="prod-btn"><img src="../IMG/food-menu-solid-24.png" alt="Product"></a>
+                            <span class="slide-label">Product</span>
+                        </div>
+                    </li>
+
+
+                    <!--Cart Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/cart.html" class="cart-btn"><img src="../IMG/cart-solid-24.png" alt="Cart"></a>
+                            <span class="slide-label">Cart</span>
+                        </div>
+                    </li>
+
+                    <!--FAQ's Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/faqs.html" class="faqs-btn"><img src="../IMG/message-rounded-dots-solid-24 (1).png" alt="Cart"></a>
+                            <span class="slide-label" id="faqs-btn">FAQs</span>
+                        </div>
+                    </li>
+
+                    <!--About Us Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/aboutus.html" class="about-btn"><img src="../IMG/info-circle-solid-24.png" alt="About Us"></a>
+                            <span class="slide-label">About Us</span>
+                        </div>
+                    </li>
+
+                    <!--Profile Button-->
+                    <li class="profile-menu">
+                        <div class="icon-wrapper" onclick="toggleProfileDropdown()">
+                        <div class="prof-btn"><img src="../IMG/user-solid-24.png" alt="Profile"></div>
+                        <span class="slide-label">Profile</span>
+                        </div>
+                    
+                        <!-- Dropdown content -->
+                        <div class="dropdown-content" id="profileDropdown">
+                            <p><strong>Logged in as:</strong> Regular</p>
+                            <p><strong>Username:</strong> aaron_paronda</p>
+                            <p><strong>Email:</strong> aaron@example.com</p>
+                            <a href="../PAGES/login.html">Logout</a>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </nav>
+
+            <div id="faq-bubble">FAQs</div>
+
+            
+              <div class="faq-container">
+            
+                <div class="faq-section">
+                  <h2>About A&A Peanuts</h2>
+            
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is A&A Peanuts?
+                        </div>
+                        
+                        <div class="faq-answer">
+                            A&A Peanuts is a proudly local business that offers high-quality, 
+                            affordable peanut snacks. Perfect for merienda, parties, or reselling!
+                        </div>
+                    </div>
+            
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Where are your products made?
+                        </div>
+                        <div class="faq-answer">
+                            All our products are freshly made in province of Laguna, Calamba City, 
+                            ensuring every bite is flavorful and safe.
+                        </div>
+                    </div>
+                </div>
+            
+                    <br><br>
+
+                <div class="faq-section">
+                  <h2>Ordering and Shipping</h2>
+            
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How can I place an order?
+                        </div>
+
+                        <div class="faq-answer">
+                                You can order directly through our website, just add items to your 
+                                cart and proceed to checkout.
+                        </div>
+                    </div>
+            
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What are your payment options?
+                        </div>
+
+                        <div class="faq-answer">
+                            We accept Cash on Delivery (COD) and 
+                            GCash for a smooth and easy transaction.
+                        </div>
+                    </div>
+                
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How long does delivery take?
+                        </div>
+
+                        <div class="faq-answer">
+                            Orders usually arrive within 2–5 
+                            business days, depending on your location.
+                        </div>
+                    </div>
+                
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you offer same-day delivery?
+                        </div>
+                        <div class="faq-answer">
+                            Currently, same-day delivery is available for 
+                            select areas. Location covered are within the province of Laguna.
+                        </div>
+                    </div>
+
+                    <br><br>    
+
+                    <div class="faq-section">
+                    <h2>Product & Packaging</h2>
+                
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How much do your products cost?
+                        </div>
+
+                        <div class="faq-answer">
+                            Our snacks start at just ₱30 each!  
+                            Affordable, delicious, and perfect 
+                            for all ages.
+                        </div>
+                    </div>
+                
+                
+                        <br><br>
+
+                    <div class="faq-section">
+                    <h2>Reseller Program</h2>
+                
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How can I become a reseller?
+                        </div>
+                        <div class="faq-answer">
+                            Simply go to the "Reseller Registration" page, 
+                            fill out the form, and wait for our confirmation. 
+                            You’ll get access to exclusive prices and support.
+                            <br>
+                            <button id="be-reseller">Be A Resseller</button>
+                        </div>
+                    </div>
+                
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is there a minimum order requirement for
+                            resellers?
+                        </div>
+
+                        <div class="faq-answer">
+                            Yes, the minimum order for resellers is 
+                            100 packs. This ensures you have enough stock 
+                            to start your sales.
+                        </div>
+                    </div>
+                
+                        <br><br>
+
+                    <div class="faq-section">
+                    <h2>Support</h2>
+                
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How can I contact you?
+                        </div>
+
+                        <div class="faq-answer">
+                            You can message us on our Facebook page
+                            or email us at aapeanuts@gmail.com.
+                        </div>
+                    </div>
+                
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What if I received the wrong item or my order is incomplete?
+                        </div>
+
+                        <div class="faq-answer">
+                            Don’t worry! Just send us a message with your order number, 
+                            and we’ll fix it as soon as possible.
+                        </div>
+                    </div>
+                </div>
+                
+                <br>
+
+                    <script src="../JS/faqs.js"></script>
+                    <script src="../JS/profile.js"></script>
+                    <script src="../JS/nav_logo.js"></script>
+        </main>
+
+
+            <div class="cont">
+                <footer>
+                <h5>&copy; 2025 a&a Peanuts. All rights reserved.</h5>
+                </footer>
+            </div>
+    </body>
+
+</html>

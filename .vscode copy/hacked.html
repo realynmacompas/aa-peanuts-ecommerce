@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="center-container">
+        <h1 class="tagline">You've Been Hacked!</h1>
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+
+        h1{
+            color: red;
+            font-size: 50px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20%;
+            animation: typing 9s steps(70, end) infinite, blink 0.75s step-end infinite;
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes typing {
+            0% { width: 0 }
+            50% { width: 100% }
+            100% { width: 0 }
+        }
+        
+        @keyframes blink {
+            50% { border-color: transparent }
+        }
+
+    </style>
+
+    <script>
+
+    </script>
+</body>
+</html>

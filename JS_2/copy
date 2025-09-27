@@ -1,0 +1,235 @@
+const loginTab = document.getElementById('loginTab');
+  const signupTab = document.getElementById('signupTab');
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+  
+
+    loginTab.onclick = () => {
+    loginTab.classList.add('active');
+    signupTab.classList.remove('active');
+    loginForm.classList.add('active');
+    signupForm.classList.remove('active');
+  };
+
+  signupTab.onclick = () => {
+    signupTab.classList.add('active');
+    loginTab.classList.remove('active');
+    signupForm.classList.add('active');
+    loginForm.classList.remove('active');
+  };
+
+  /*loginTab.onclick = () => {
+    loginTab.classList.add('active');
+    signupTab.classList.remove('active');
+    document.querySelector('.flip-card').classList.remove('flipped');
+  };
+  
+  signupTab.onclick = () => {
+    signupTab.classList.add('active');
+    loginTab.classList.remove('active');
+    document.querySelector('.flip-card').classList.add('flipped');
+  };
+
+
+  loginTab.addEventListener('click', () => {
+    flipCard.classList.remove('flipped');
+    loginTab.classList.add('active');
+    signupTab.classList.remove('active');
+  });
+  
+  signupTab.addEventListener('click', () => {
+    flipCard.classList.add('flipped');
+    signupTab.classList.add('active');
+    loginTab.classList.remove('active');
+  });  */
+  
+   //PASSWORD SHOW/HIDE FOR LOGIN
+
+const toggleIcons = document.querySelectorAll(".toggle-password");
+
+toggleIcons.forEach(function (icon) {
+  icon.addEventListener("click", function () {
+    const targetId = icon.getAttribute("data-target");
+    const passwordInput = document.getElementById(targetId);
+
+    const isPassword = passwordInput.type === "password";
+    passwordInput.type = isPassword ? "text" : "password";
+    icon.src = isPassword ? "../IMG/eye-solid.svg" : "../IMG/eye-slash-solid.svg";
+  });
+});
+
+
+  //CONFIRM PASSWORD FIELD//
+
+  const password = document.getElementById('signupPassword');
+const confirmPassword = document.getElementById('confirm-password');
+const errorText = document.getElementById('password-error');
+
+let passwordsMatch = false;
+
+function updateSignupButtonState() {
+  signupButton.disabled = !(usernameValid && emailValid && passwordsMatch && strongPassword);
+}
+
+function validatePasswords() {
+  if (confirmPassword.value === '' || password.value === '') {
+    errorText.textContent = '';
+    passwordsMatch = false;
+  } else if (password.value !== confirmPassword.value) {
+    errorText.textContent = "Passwords Do Not Match!";
+    passwordsMatch = false;
+  } else {
+    errorText.textContent = "";
+    passwordsMatch = true;
+  }
+
+  updateSignupButtonState();
+}
+
+confirmPassword.addEventListener('input', validatePasswords);
+password.addEventListener('input', validatePasswords);
+
+
+
+//PASSWORD REQUIREMENTS//
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+  const password = document.getElementById("signupPassword").value;
+   const passwordHelp = document.getElementById("passwordHelp");
+  
+   const strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+  
+   if (!strongPassword.test(password)) {
+     e.preventDefault(); // Prevent form submission
+      passwordHelp.textContent = "Password must be at least 8 characters and include uppercase, lowercase, number, and special character.";
+    } else {
+     passwordHelp.textContent = "";
+    
+  
+    }
+  });
+
+
+  
+  
+//SIGNUP LOGIC//
+
+  const signupName = document.getElementById("signupName");
+const signupEmail = document.getElementById("signupEmail");
+const usernameError = document.getElementById("usernameError");
+const emailError = document.getElementById("emailError");
+const signupButton = document.getElementById("signup");
+const signupPassword = document.getElementById("signupPassword");
+const passwordHelp = document.getElementById("passwordHelp");
+
+let usernameValid = false;
+let emailValid = false;
+
+function validateField(type, value, errorElement) {
+  fetch("../PHP/checksignup_cred.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: `type=${type}&value=${encodeURIComponent(value)}`
+  })
+  .then(res => res.text())
+  .then(response => {
+    if (response === 'taken') {
+      errorElement.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)} Already Taken!`;
+      if (type === 'username') usernameValid = false;
+      if (type === 'email') emailValid = false;
+    } else {
+      errorElement.textContent = '';
+      if (type === 'username') usernameValid = true;
+      if (type === 'email') emailValid = true;
+    }
+    updateSignupButtonState();
+  });
+}
+
+signupName.addEventListener("input", () => {
+  validateField("username", signupName.value, usernameError);
+});
+
+
+function isValidEmailFormat(email) {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@((gmail|yahoo|outlook)\.com|[a-zA-Z0-9.-]+\.(edu|gov|ph))$/;
+  return emailRegex.test(email);
+}
+
+
+signupEmail.addEventListener("input", () => {
+  const email = signupEmail.value.trim();
+
+  if (email === '') {
+    emailError.textContent = '';
+    emailValid = false;
+    updateSignupButtonState();
+    return;
+  }
+
+  if (!isValidEmailFormat(email)) {
+    emailError.textContent = "Invalid Email Format!";
+    emailValid = false;
+    updateSignupButtonState();
+    return;
+  }
+
+  // If format is valid, proceed to check availability
+  validateField("email", email, emailError);
+});
+
+
+window.onload = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const signupSuccess = urlParams.get('signup');
+
+  if (signupSuccess === 'success') {
+    document.getElementById('successModal').classList.remove('hidden');
+  }
+
+  const proceedBtn = document.getElementById('proceedLoginBtn');
+  if (proceedBtn) {
+    proceedBtn.onclick = () => {
+      window.location.href = '../PAGES/login.html';
+    };
+  }
+};
+
+
+
+
+
+
+
+//LOGIN LOGIC//
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+  const errorMessage = document.getElementById("loginError");
+
+  fetch("../PHP/login.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+   body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+  })
+    .then(res => res.text())
+    .then(response => {
+
+      //console.log("Server response:", response); // 👈 log response
+
+      if (response.trim() === "success") {
+        window.location.href = "../PAGES/home.html";
+      }  else {
+        errorMessage.textContent = "Credential/s are/is incorrect.";
+      }
+    })
+    .catch(error => {
+      console.error("Login error:", error);
+      errorMessage.textContent = "Something went wrong.";
+    });
+});

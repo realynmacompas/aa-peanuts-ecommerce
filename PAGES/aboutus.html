@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&A Peanuts</title>
+    <link rel="stylesheet" href="../CSS/aboutus.css">
+    <link href="../ASSETS/aos_css.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+    <body>
+        <img src="../IMG/P1 (6).jpeg" alt="Background Image" class="bg-img">
+        <!-- Header Section -->
+        <header id="HEADER">
+            <a href="../PAGES/home.html"><h1><img src="../IMG/1e2b3aea-d004-4674-9f39-a064586ce66b-removebg-preview (6).png" alt="logo" class="logo"></h1></a>
+            <p id="greek-word">ελκυστικός</p>
+        </header>
+
+        <main>
+    
+        <!-- Navigation Bar -->
+            <nav>
+                <ul>
+                     <!--LOGO-->
+
+                   <li>
+                      <a href="../PAGES/home.html" class="navbar-logo-link">
+                        <img src="../IMG/1e2b3aea-d004-4674-9f39-a064586ce66b-removebg-preview (6).png" alt="logo" class="navbar-logo">
+                      </a>
+                    </li>
+                    <!--Home Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/home.html" class="home-btn"><img src="../IMG/home-solid-24 (4).png" alt="Home"></a> 
+                            <span class="slide-label">Home</span>             
+                        </div>
+                    </li>
+                
+
+                    <!--Product Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/product.html" class="prod-btn"><img src="../IMG/food-menu-solid-24.png" alt="Product"></a>
+                            <span class="slide-label">Product</span>
+                        </div>
+                    </li>
+
+
+                    <!--Cart Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/cart.html" class="cart-btn"><img src="../IMG/cart-solid-24.png" alt="Cart"></a>
+                            <span class="slide-label">Cart</span>
+                        </div>
+                    </li>
+
+                    <!--FAQ's Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/faqs.html" class="faqs-btn"><img src="../IMG/message-rounded-dots-solid-24.png" alt="Cart"></a>
+                            <span class="slide-label">FAQs</span>
+                        </div>
+                    </li>
+
+                    <!--About Us Button-->
+                    <li>
+                        <div class="icon-wrapper" onclick="toggleLabel(this)">
+                            <a href="../PAGES/aboutus.html" class="about-btn"><img src="../IMG/info-circle-solid-24 (1).png" alt="Cart"></a>
+                            <span class="slide-label" id="about-btn">About Us</span>
+                        </div>
+                    </li>
+
+                     <!--Profile Button-->
+                     <li class="profile-menu">
+                        <div class="icon-wrapper" onclick="toggleProfileDropdown()">
+                        <div class="prof-btn"><img src="../IMG/user-solid-24.png" alt="Profile"></div>
+                        <span class="slide-label">Profile</span>
+                        </div>
+                    
+                        <!-- Dropdown content -->
+                        <div class="dropdown-content" id="profileDropdown">
+                            <p><strong>Logged in as:</strong> Regular</p>
+                            <p><strong>Username:</strong> aaron_paronda</p>
+                            <p><strong>Email:</strong> aaron@example.com</p>
+                            <a href="../PAGES/login.html">Logout</a>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </nav>
+
+            
+        <h1 id="Welcome">Welcome to <p id="wel-p">a&a</p> Peanuts!</h1>
+    
+
+  <section class="intro">
+  <div class="intro-content">
+        <div class="intro-image">
+            <img src="../IMG/P1 (3).jpeg" alt="A&A Peanuts Pack" />
+        </div>
+        <div class="intro-text" data-aos="fade-left">
+        <h2>
+            Our Story
+            <img
+            src="../IMG/1e2b3aea-d004-4674-9f39-a064586ce66b-removebg-preview (6).png"
+            alt="Peanut Icon"
+            class="icon"
+            />
+        </h2>
+        <p>
+            Founded in <span class="year-badge">2024</span>,
+            <span class="highlight">A&A Peanuts</span> started as a humble passion
+            project by two siblings with only ₱20 peanut packs. What began as a small
+            dream is now a movement to bring affordable happiness to every Filipino
+            snack lover.
+        </p>
+        </div>
+    </div>
+  <!-- Bottom wave divider -->
+  <svg
+    class="wave-divider"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 150"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#ffffffaa"
+      d="M0,64L48,74.7C96,85,192,107,288,106.7C384,107,480,85,576,74.7C672,64,768,64,864,74.7C960,85,1056,107,1152,117.3C1248,128,1344,128,1392,128L1440,128L1440,150L1392,150C1344,150,1248,150,1152,150C1056,150,960,150,864,150C768,150,672,150,576,150C480,150,384,150,288,150C192,150,96,150,48,150L0,150Z"
+    ></path>
+  </svg>
+</section>
+
+
+    <section class="mission-vision">
+    <div class="mission" data-aos="fade-right">
+        <h2>Our Mission</h2>
+        <p>To deliver affordable, mouth-watering, high-quality peanut snacks that bring joy, pride, and value to Filipino homes, while supporting local farmers and empowering small entrepreneurs.</p>
+    </div>
+
+    <div class="vision" data-aos="fade-left">
+        <h2>Our Vision</h2>
+        <p>To become a household name in Filipino snack culture, blending unbeatable flavors with heart-centered values that uplift communities nationwide.</p>
+    </div>
+    </section>
+
+    <section class="benefits">
+        <h2 data-aos="fade-up">Why Choose Our Peanuts?</h2>
+        <div class="reasons">
+            <div class="reason" data-aos="fade-right">
+                ✔ High in protein for muscle power
+            </div>
+
+            <div class="reason" data-aos="fade-left">
+                ✔ Heart-friendly healthy fats
+            </div>
+
+            <div class="reason" data-aos="fade-right">
+                ✔ Boosts energy and sharpens focus
+            </div>
+
+            <div class="reason" data-aos="fade-left">
+                ✔ Budget-friendly super snack
+            </div>
+
+            <div class="reason" data-aos="fade-right">
+                ✔ Perfect for any occasion
+            </div>
+        </div>
+    </section>
+
+   <section class="founder">
+    <div class="founder-content">
+        <div class="founder-info" data-aos="fade-right">
+            <h2>Meet the Founder</h2>
+            <p>
+                <strong>Aaron Paronda</strong> — student, entrepreneur, dreamer. From IT to peanuts, his mission is simple: Serve good food. Serve a great purpose. Fuel Filipino pride.
+            </p>
+        </div>
+        <div class="founder-img" data-aos="fade-left">
+            <div class="triangle-mask">
+                <img src="../IMG/Founder.jpg" alt="Aaron Paronda - Founder of A&A Peanuts">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="reseller" data-aos="zoom-in">
+        <p>Start your snack empire today with A&A Peanuts! Enjoy up to <em>20% off</em>, flexible profit opportunities, and VIP access to our new flavors and promos.</p><br>
+        <a href="../PAGES/reseller-signup.html" class="cta-button"><button>Become a Reseller!</button></a><br><br>
+    </section><br><br><br><br>
+
+    <section class="closing" style="text-align: center;">
+        <h2>Let's Crunch Together!</h2>
+        <p>Thank you for joining our story. Whether you snack or sell, 
+        <p>you're part of the <b>a&a family</b>. Let's spread the crunch, love,</p> 
+        <p>and Filipino pride together!</p>
+    </section><br><br>
+    
+        </main>
+
+                <script src="../JS/profile.js"></script>
+                <script src="../JS/aboutus.js"></script>
+                <script src="../ASSETS/aos.js"></script>
+                <script src="../JS/nav_logo.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+                <script>
+                     AOS.init();
+                 </script>
+        
+
+            <div class="cont">
+                <footer>
+                <h5>&copy; 2025 a&a Peanuts. All rights reserved.</h5>
+                </footer>
+            </div>
+        </div>
+    </body>
+
+</html>

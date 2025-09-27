@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Delete Confirmation</title>
+<style>
+/* Modal styles */
+#confirmationModal {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+#confirmationModal .modal-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 80%;
+}
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  
+  justify-content: space-around;
+}
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-confirm { background-color: #d9534f; color: #fff; }
+.btn-cancel { background-color: #aaa; color: #fff; }
+
+/* Centered UI message */
+.ui-message {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #4caf50;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 10000;
+}
+</style>
+</head>
+<body>
+
+<!-- DELETE CONFIRMATION MODAL -->
+<div id="confirmationModal">
+  <div class="modal-content">
+    <p id="confirmationText">Are you sure you want to delete this product?</p>
+    <div class="modal-buttons">
+      <button id="confirmYes" class="btn-confirm">Yes</button>
+      <button id="confirmNo" class="btn-cancel">No</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let productToDelete = null;
+
+
+function openDeleteConfirmation(id, row) {
+  productToDelete = row;
+
+  const modal = document.getElementById('confirmationModal');
+  modal.style.display = 'flex';
+
+  const confirmYes = document.getElementById('confirmYes');
+  const confirmNo = document.getElementById('confirmNo');
+
+  // Cancel button
+  confirmNo.onclick = () => modal.style.display = 'none';
+
+  // Confirm deletion
+  confirmYes.onclick = () => {
+    modal.style.display = 'none';
+
+    // Show "Deleting..." message
+    const msg = document.createElement('div');
+    msg.className = 'ui-message';
+    msg.textContent = 'Deleting...';
+    document.body.appendChild(msg);
+
+    // AJAX request to delete product from DB
+    fetch('../ADMIN_PHP/delete_product.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'id=' + id
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        // Remove the row from the table
+        if (productToDelete) productToDelete.remove();
+        msg.textContent = 'Product deleted successfully!';
+        setTimeout(() => msg.remove(), 2000);
+      } else {
+        msg.textContent = '❌ Error: ' + data.error;
+        setTimeout(() => msg.remove(), 3000);
+      }
+    });
+  };
+}
+</script>
+</body>
+</html>

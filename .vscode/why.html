@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="center-container">
+        <h1>Penge ako ng ₱50.00</h1>
+    </div>
+
+    <style>
+        body{
+            background-color: black;
+        }
+
+        h1{
+            color: red;
+            font-size: 50px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            width: fit-content;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 9s steps(70, end) infinite, blink 0.75s step-end infinite;
+        }
+
+        .center-container {
+            display: flex;
+            height: 200px;
+            width: 600px;
+            position: fixed;
+            top: 35%;
+            left: 30%;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            text-align: center;
+            border: 2px solid red;
+        }
+
+        /* Animations */
+        @keyframes typing {
+            0% { width: 0 }
+            50% { width: 100% }
+            100% { width: 0 }
+        }
+
+
+    </style>
+
+    <script>
+
+    </script>
+</body>
+</html>
