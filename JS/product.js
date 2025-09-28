@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.psgcData = {};
 
   // Load nested psgc.json (adjust path if your file is in a different folder)
-  fetch('/AAPEANUTS/psgc.json')
+  fetch('../ASSETS/psgc.json')
     .then(res => {
       if (!res.ok) throw new Error('PSGC fetch failed: ' + res.status);
       return res.json();
