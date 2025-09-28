@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A&A Peanuts Reseller Program</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../IMG/favicon_aa.png">
+
+  <style>
+    /* --- RESET --- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffbe7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 50px;
+      background: linear-gradient(135deg, #fbc531, #e1b12c);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2ecc71;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #27ae60; }
+
+    /* Perks Section */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+    section h2 { margin-bottom: 30px; font-size: 2em; }
+
+    .perks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .perk {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .perk:hover { transform: translateY(-8px); }
+    .perk span { font-size: 40px; display: block; margin-bottom: 10px; }
+
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-style: italic;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: #e67e22;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f39c12;
+      color: white;
+    }
+    .final-cta h2 { font-size: 2.2em; margin-bottom: 20px; }
+    .final-cta .btn { background: #2c3e50; }
+    .final-cta .btn:hover { background: #1a252f; }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Confetti Canvas */
+    #confetti-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    header * { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <canvas id="confetti-canvas"></canvas>
+    <h1>🎉 Congratulations!</h1>
+    <p>You’re invited to join our exclusive Reseller Program.<br>
+       Turn peanuts 🥜 into profits 💰 and enjoy amazing perks.</p>
+    <a href="#perks" class="btn">Start Your Journey 🚀</a>
+  </header>
+
+  <!-- PERKS -->
+  <section id="perks">
+    <h2>Why Become a Reseller?</h2>
+    <div class="perks">
+      <div class="perk">
+        <span>📦</span>
+        <h3>Buy in Bulk</h3>
+        <p>Get huge discounts when you buy 100+ packs.</p>
+      </div>
+      <div class="perk">
+        <span>💸</span>
+        <h3>Earn Profits</h3>
+        <p>Sell them and enjoy your growing income.</p>
+      </div>
+      <div class="perk">
+        <span>🎁</span>
+        <h3>Exclusive Freebies</h3>
+        <p>Special rewards for our loyal resellers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section>
+    <h2>What Our Resellers Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        “I started as a reseller and now I earn daily profits while enjoying my favorite peanuts!”
+        <strong>– Maria, Happy Reseller</strong>
+      </div>
+      <div class="testimonial">
+        “Selling A&A Peanuts is so easy. People love the taste, and I love the income.”
+        <strong>– John, College Student</strong>
+      </div>
+      <div class="testimonial">
+        “The reseller perks are amazing. Bulk discounts and freebies keep me motivated.”
+        <strong>– Anne, Small Business Owner</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <h2>What are you waiting for?<br>Join the winning team of A&A Resellers!</h2>
+    <a href="signup.html" class="btn">Buy Now 🚀</a>
+  </div>
+
+  <!-- Confetti Script -->
+  <script>
+    const canvas = document.getElementById('confetti-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = document.querySelector('header').offsetHeight;
+
+    const confetti = [];
+    for (let i = 0; i < 120; i++) {
+      confetti.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * 100,
+        color: "hsl(" + Math.random() * 360 + ",100%,50%)",
+        tilt: Math.random() * 10 - 10
+      });
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2, false);
+        ctx.fillStyle = c.color;
+        ctx.fill();
+      });
+      updateConfetti();
+    }
+
+    function updateConfetti() {
+      confetti.forEach(c => {
+        c.y += Math.cos(c.d) + 1 + c.r/2;
+        c.x += Math.sin(c.d);
+        if (c.y > canvas.height) {
+          c.y = -10; c.x = Math.random() * canvas.width;
+        }
+      });
+    }
+
+    function animateConfetti() {
+      drawConfetti();
+      requestAnimationFrame(animateConfetti);
+    }
+
+    animateConfetti();
+  </script>
+
+</body>
+</html>
