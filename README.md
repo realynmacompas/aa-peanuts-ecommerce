@@ -60,11 +60,11 @@ As a member of the development team, I contributed to:
 
 ## Screenshots
 
--Landing Page
+- Landing Page
   <img width="1352" height="639" alt="564890231_792103047081485_1165884046352245154_n" src="https://github.com/user-attachments/assets/620e173d-4322-4642-9007-d2224224af60" />
--Log In Page
+- Log In Page
   <img width="1366" height="631" alt="564175522_1540484167371667_7646968649028186003_n" src="https://github.com/user-attachments/assets/d57b19fd-42ea-4a86-99d6-8010dc854195" />
--Home Page
+- Home Page
   <img width="1352" height="636" alt="557284523_1356953219330821_3878704486146262275_n" src="https://github.com/user-attachments/assets/f4c2c077-88d4-4a38-a187-e93923a3de97" />
 - Product Catalog
   <img width="1344" height="634" alt="553666856_3124111071088647_340310926809701394_n" src="https://github.com/user-attachments/assets/002a1752-a537-4872-b8f5-05debef123aa" />
