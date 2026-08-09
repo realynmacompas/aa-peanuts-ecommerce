@@ -60,8 +60,6 @@ As a member of the development team, I contributed to:
 
 ## Screenshots
 
-> Screenshots will be added soon.
-
 -Landing Page
   <img width="1352" height="639" alt="564890231_792103047081485_1165884046352245154_n" src="https://github.com/user-attachments/assets/620e173d-4322-4642-9007-d2224224af60" />
 -Log In Page
